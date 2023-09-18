@@ -1,5 +1,6 @@
 ﻿using Common.Application.Repositories.Sql;
 using Common.Domain.Entities;
+using ESCMB.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace ESCMB.Application.Repositories.Sql
 {
-    internal interface IClientRepository : IRepository<Domain.Entities.Client>
+    public interface IClientRepository : IRepository<Client>
     {
+        Task<string> AddOneAsync(Client entity);
     }
 }
