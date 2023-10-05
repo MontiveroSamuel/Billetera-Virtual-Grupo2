@@ -23,10 +23,10 @@ namespace ESCMB.Domain.Entities
             Email = email;
         }
 
-       /* public string SetEmail( string value)
+        public string SetEmail( string value)
         {
             return Email = value ?? throw new ArgumentNullException (nameof(value));
 
-        }*/
+        }
     }
 }
