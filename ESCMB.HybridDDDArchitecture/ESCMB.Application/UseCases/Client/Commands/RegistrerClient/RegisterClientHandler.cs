@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace ESCMB.Application.UseCases.Client.Commands.RegistrerClient
 {
-    internal class RegisterClientHandler : IRequestCommandHandler<RegisterClientCommand string>
+    internal class RegisterClientHandler : IRequestCommandHandler<RegisterClientCommand, string>
     {
         private readonly IEventPublisher _eventPublisher;
         private readonly IClientRepository _clientRepository;
-
+        
         public RegisterClientHandler(IEventPublisher  eventPublisher, IClientRepository clientRepository )
         {
              _eventPublisher = eventPublisher ?? throw new ArgumentNullException(nameof(eventPublisher));

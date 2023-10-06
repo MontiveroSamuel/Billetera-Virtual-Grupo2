@@ -10,8 +10,14 @@ namespace ESCMB.Domain.Entities
 {
     public class Client : DomainEntity<Domain.Validators.ClientValidator>
     {
-        public string Id { get; private set; }
+        public string IdClient { get; private set; }
+        public string Apellido { get; private set; }
+        public string Nombre { get; private set; }
+
+        public string CuilCuit { get; private set; }
         public string Email { get; private  set; }
+
+        public int Estado { get; set; }
         public Client()
         {
             
@@ -19,7 +25,7 @@ namespace ESCMB.Domain.Entities
 
         public Client(string id, string email)
         {
-            Id = id;
+            IdClient = id;
             Email = email;
         }
 
