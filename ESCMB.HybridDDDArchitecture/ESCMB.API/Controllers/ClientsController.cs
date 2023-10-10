@@ -1,13 +1,10 @@
 ﻿using Common.Application.Commands;
 using ESCMB.Application.UseCases.Client.Commands.RegistredClient;
-using ESCMB.Application.UseCases.DummyEntity.Commands.CreateDummyEntity;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SharpCompress.Readers;
 
 namespace ESCMB.API.Controllers
 {
-   
+
 
     [ApiController]
     public class ClientsController : BaseController

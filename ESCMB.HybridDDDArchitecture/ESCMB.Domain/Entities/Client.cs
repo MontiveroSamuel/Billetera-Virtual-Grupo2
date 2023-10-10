@@ -1,37 +1,34 @@
 ﻿using Common.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using static ESCMB.Domain.Enums;
 
 namespace ESCMB.Domain.Entities
 {
     public class Client : DomainEntity<Domain.Validators.ClientValidator>
     {
-        public string IdClient { get; private set; }
+        [Key]
+        public int Id { get; private set; }
         public string Apellido { get; private set; }
         public string Nombre { get; private set; }
-
         public string CuilCuit { get; private set; }
-        public string Email { get; private  set; }
-
-        public int Estado { get; set; }
+        public string Email { get; private set; }
+        public ClientStatus Status { get; set; }
         public Client()
         {
-            
         }
 
-        public Client(string id, string email)
+        public Client(string apellido, string nombre, string cuilCuit, string email)
         {
-            IdClient = id;
+            Apellido = apellido;
+            Nombre = nombre;
+            CuilCuit = cuilCuit;
             Email = email;
+            Status = ClientStatus.Pending;
         }
 
-        public string SetEmail( string value)
+        public string SetEmail(string value)
         {
-            return Email = value ?? throw new ArgumentNullException (nameof(value));
+            return Email = value ?? throw new ArgumentNullException(nameof(value));
 
         }
     }
